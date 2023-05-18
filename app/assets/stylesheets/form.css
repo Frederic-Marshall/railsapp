@@ -1,0 +1,35 @@
+.form-group {
+  text-align: center;
+  margin:.5rem 0;
+}
+
+.form-select {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 0.25rem;
+
+  margin:.5rem 0;
+}
+
+.form-field,
+.form-text-area {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 0.25rem;
+
+  margin:.5rem 0;
+}
+
+.file-field {
+  background-color: #fff;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  
+  margin: 10px 0;
+}
+
+.form-text-area {
+  box-sizing: border-box;
+  width: 100%;
+}

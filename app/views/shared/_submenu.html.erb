@@ -1,0 +1,12 @@
+<div class='submenu'>
+
+    <ul class='menu submenu-list'>
+        <% Category.roots.each do |category| %>
+            <li class='list-item'>
+                <%= link_to category.name, category, class: "category-link #{'active' if current_page?(category_path(category))}" %>
+            </li>
+        <% end %>
+    </ul>
+    <%= fa_icon "solid bars", class: 'toggle-submenu toggle-btn' %>
+</div>
+

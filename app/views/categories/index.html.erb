@@ -1,0 +1,17 @@
+<div class='container center'>
+    <table>
+        <thead><thead>
+        <tbody>
+            <% @categories.each_with_index do |category, index| %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= category.name %></td>
+                    <td><%= category.parent.name if category.parent.present? %></td>
+                    <td><%= link_to 'Изменить', edit_category_path(category), class: 'button' %>
+                    <%= button_to 'Удалить', category_path(category), method: :delete, class: 'button' %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>    
+</div>

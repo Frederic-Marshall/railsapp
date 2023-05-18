@@ -1,0 +1,26 @@
+.button {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  border:none;
+  border-radius: 10px;
+  border: 2px solid black;
+
+  
+  cursor:pointer;
+  transition: all ease .3s;
+}
+
+.button:hover {
+  background-color: #808080;
+}
+
+.button-with-line {
+  color:white;
+  text-decoration: underline;
+  transition: all .2s linear;
+}
+
+.button-with-line:hover {
+  color:#808080;
+}

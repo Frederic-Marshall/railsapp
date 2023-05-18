@@ -1,0 +1,48 @@
+.submenu {
+  display: flex;
+  float:left;
+  position: absolute;
+
+  font-size: 25px;
+
+  left: -16rem;
+  overflow: hidden;
+  transition: left .2s ease-in-out;
+}
+
+.submenu.active {
+  left: 2rem;
+}
+
+.submenu-list {
+  background-color: rgba(0, 0, 0, .6);
+  border-right:7px solid white;
+  border-left:7px solid white;
+}
+
+.list-item {
+  border-bottom: 1px solid white;
+  transition: all .3s ease;
+}
+
+.list-item:active {
+  background-color: #999999;
+}
+
+.category-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color:white;
+  padding: 1em;
+}
+
+.toggle-submenu {
+  position: relative;
+  font-size: 2rem;
+  margin: 1rem 1rem;
+  cursor: pointer;
+}
+
+

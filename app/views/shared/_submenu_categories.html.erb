@@ -1,0 +1,8 @@
+<li class='list-item'>
+    <% categories.each do |category, children| %>
+        <li class='list-item'>
+            <%= link_to category.name, category, class: "category-link #{'active' if current_page?(category_path(category))}" %>
+            <%= render 'shared/submenu_categories', categories: children if children.present? %>
+        </li>
+    <% end %>
+</ul>

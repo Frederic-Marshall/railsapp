@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>K/T</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class='div-in-line'>
+          <%= image_tag("Group_1.svg", :class => "img-logo") %>
+          <%= link_to 'Главная', root_path, class: 'main-button' %>
+        </div>
+        <div class='div-in-line'>
+          <% if current_user.present? %>
+            <%= content_tag 'span', "Ваш ID: " "#{current_user.id}" , class: 'profile-button' %>
+            <%= fa_icon "solid user", class: 'toggle-button toggle-btn' %>
+            <div class='dropdown-menu'>
+              <ul>
+                <li>
+                  <%= link_to "Редактировать", edit_user_path(current_user), class: 'point-menu' %>
+                </li>
+                <li>
+                  <%= button_to 'Выйти', session_path, method: :delete, class: 'point-menu' %>
+                </li>
+              </ul>
+            </div>
+          <% else %>
+            <%= link_to 'Регистрация', new_user_path, class: "btn-hover"%>
+            <%= link_to 'Войти', new_session_path, class: "btn-hover"%>
+          <% end %>
+        </div>
+      </header>
+      <%= render "shared/submenu" %>
+      <% if flash[:notice].present? %>
+        <p class="message message-notice"><%= flash[:notice] %></p>
+      <% elsif flash[:alert].present? %>
+        <p class="message message-alert"><%= flash[:alert] %></p>
+      <% end %>
+      <div class='content'>
+        <%= yield %>
+      </div>
+    </div>
+    <script>
+      var toggleBtn = document.querySelector('.toggle-button')
+      var toggleBtnIcon = document.querySelector('.toggle-button i')
+      var dropDownMenu = document.querySelector('.dropdown-menu')
+    
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+      }
+
+      var toggleSub = document.querySelector('.toggle-submenu')
+      var toggleSubIcon = document.querySelector('.toggle-submenu i')
+      var subMenu = document.querySelector('.submenu')
+
+      toggleSub.onclick = function () {
+        subMenu.classList.toggle('active')
+        toggleSub
+      }
+    </script>
+  </body>
+</html>

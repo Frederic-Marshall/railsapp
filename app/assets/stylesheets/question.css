@@ -1,0 +1,29 @@
+.question-body {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.question-footer {
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid white;
+  padding: 10px;
+}
+
+.button-question {
+  color:white;
+  margin: 0 .2rem;
+}
+
+.button-question:active {
+  color:#c9c9c9;
+}
+
+/* SHOW */
+
+.div-in-line-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+}

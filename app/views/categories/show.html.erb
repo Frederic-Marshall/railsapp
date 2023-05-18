@@ -1,0 +1,9 @@
+<div class='container mb-sm'>
+    <h2 class='title'><%= @category.name %></h2>
+</div>
+
+<% @questions.each do |question| %>
+  <div class="mt-sm container">
+    <%= render question %>
+  </div>
+<% end %>

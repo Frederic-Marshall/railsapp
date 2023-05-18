@@ -1,0 +1,18 @@
+<div class="container">
+  <p>
+    <%= render 'form', question: @question %>
+  </p>
+</div>
+
+
+<div class="container">
+  <%= @questions.count %>
+  <%= inclination(@questions.count, 'Конспект','Конспекта', 'Конспектов') %>
+</div>
+
+<% @questions.each do |question| %>
+  <div class="container">
+    <%= render question %>
+  </div>
+<% end %>
+

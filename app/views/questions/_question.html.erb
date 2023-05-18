@@ -1,0 +1,21 @@
+<div>
+  <% if question.category.present? %>
+    <h4 class='form-group'>Категория: <%= link_to question.category.name, question.category, class: 'button-with-line' %></h2>
+  <% end %>
+  <div class='question-body'>
+    <%= question.body %>
+  </div>
+</div>
+
+<div class="question-footer">
+  <div>
+    <p>Автор: <%= question.user.nickname %></p>
+    <%= l(question.created_at, format: :short) %>
+  </div>
+
+  <div class='div-in-line'>
+    <%= link_to 'Просмотреть', question_path(question), class: 'button-with-line button-question' %>
+    <%= button_to fa_icon('trash-o'), question_path(question), method: :delete, title:'Delete question', class: 'button-question' %>
+    <%= link_to fa_icon('pencil'), edit_question_path(question), title:'Edit question', class: 'button-question' %>
+  </div>
+</div>
